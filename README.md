@@ -10,4 +10,5 @@ J'ai pensé à un espace ou l'on pourrait echanger des pb lisp ainsi que les sol
 * Une branche par problème. 
 * La branche master est vide et chaque branche est dédiée à un pb. 
 * Les solutions peuvent être dans de multiples langages.
-* Chaque personne peut se faire une sous branche histoire de simplifier les comparaisons. *Cette dernière idée plus difficile à appliquer
+* Chaque personne peut se faire une sous branche histoire de simplifier les comparaisons. 
+*Cette dernière idée plus difficile à appliquer*
