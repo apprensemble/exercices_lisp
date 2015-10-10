@@ -1,10 +1,13 @@
+;;;;amelioration de la presentation
 (defun gt(l x)
   (if (endp l)
     '()
     (cons (if (>(car l)x)
 	      (car l) '())
 	    (gt(cdr l)x))))
-
+'(gt '(5 6 7 8) 8)
 (gt '(5 6 7 8) 8)
+'(gt '(5 6 7 8) 1)
 (gt '(5 6 7 8) 1)
+'(gt '(5 6 7 8) 6)
 (gt '(5 6 7 8) 6)

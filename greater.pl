@@ -10,7 +10,11 @@ sub greater {
 
   }
 }
+my @liste = (5,6,7,8);
+my $res = greater(8,@liste);
+print 'greater(8,',@liste,') : ',$res,"\n";
+$res = greater(1,@liste);
+print 'greater(1,',@liste,') : ',$res,"\n";
+$res = greater(6,@liste);
+print 'greater(6,',@liste,') : ',$res,"\n";
 
-my $res = greater(7,4,5,6,7,8,2,3);
-
-print $res;
