@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:" />
+</head>
+
+<body>
+
+
+
+<ul id="index">
+  <li><a href="#nbOcc">nbOcc</a>
+    <ul>
+      <li><a href="#description">description</a>
+        <ul>
+          <li><a href="#code">code</a></li>
+        </ul>
+      </li>
+      <li><a href="#resultat">resultat</a>
+        <ul>
+          <li><a href="#code-de-la-fonction-resultat">code de la fonction resultat</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="nbOcc">nbOcc</h1>
+
+<h2 id="description">description</h2>
+
+<p>compte le nombre d&#39;occurence cible dans la liste de maniere recursive</p>
+
+<h3 id="code">code</h3>
+
+<pre><code> sub nbOcc {
+  my ($cible,@liste) = @_;
+  if (@liste&gt;0) {
+    return (shift @liste eq $cible)+nbOcc($cible,@liste); #on dirait presque du lisp non? j&#39;ai compare car de l a la cible et appelle nbOcc(cible,cdr l) 
+  }
+ }</code></pre>
+
+<h2 id="resultat">resultat</h2>
+
+<p>fonction simple ne servant qu&#39;a mettre en valeur l&#39;action menee. <b>ne pas oublier que ce qui compte c&#39;est nbOcc</b></p>
+
+<pre><code> cible :b ;liste : (a,b,c,d,e,b,b);nbOcc : 3
+ cible :c ;liste : (a,a,b,c,c,c,c,d,e,b,c,c,b,c,c,z,f);nbOcc : 8
+ cible :a ;liste : (a,a,b,c,c,c,c,d,e,b,c,c,b,c,c,z,f);nbOcc : 2
+ cible :y ;liste : (u,b,b,c,c,c,c,d,e,b,c,c,b,c,c,z,f);nbOcc : 0
+ cible :e ;liste : (a,a,b,c,c,c,c,d,e,b,c,c,b,c,c,z,f);nbOcc : 1</code></pre>
+
+<h3 id="code-de-la-fonction-resultat">code de la fonction resultat</h3>
+
+<pre><code>  sub resultat {
+    my ($cible,@liste) = @_;
+
+  print &quot;cible :$cible ;liste : (&quot;,join(&quot;,&quot;,@liste),&#39;);nbOcc : &#39;;
+  print nbOcc($cible,@liste),&quot;\n&quot;;
+  }</code></pre>
+
+
+</body>
+
+</html>
+
+
