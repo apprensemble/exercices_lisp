@@ -28,6 +28,7 @@
       <li><a href="#Questions">Questions</a></li>
     </ul>
   </li>
+  <li><a href="#POD-ERRORS">POD ERRORS</a></li>
 </ul>
 
 <h1 id="nbOcc-version-lisp">nbOcc version lisp</h1>
@@ -46,15 +47,34 @@
 
 <h2 id="fonction-resultat">fonction resultat</h2>
 
-<p>permet d&#39;afficher l&#39;appel de fonction ainsi que son resultat</p>
+<p>permet d&#39;afficher l&#39;appel de fonction ainsi que son resultat. Il permet a present d&#39;avoir un affichage complet en mode script.</p>
 
 <h3 id="code-resultat">code resultat</h3>
+
+<p><b>version avec sorties formate pour le mode script</b></p>
+
+<pre><code>  (defun resultat(l x)
+    (format t &quot;~s : ~s~%&quot; (list &#39;nbOcc l x)
+    (nbOcc l x)))</code></pre>
+
+<p><b>version avec sorties non formate</b></p>
 
 <pre><code>  (defun resultat(l x)
     (print (list &#39;nbOcc l x))
     (nbOcc l x))</code></pre>
 
 <h3 id="resultat">resultat</h3>
+
+<p><b>resultat formate pour le mode script</b></p>
+
+<pre><code>  (NBOCC (&quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;a&quot;) &quot;a&quot;) : 2
+  (NBOCC (&quot;a&quot; &quot;a&quot; &quot;a&quot; &quot;a&quot;) &quot;a&quot;) : 4
+  (NBOCC (&quot;b&quot; &quot;c&quot; &quot;a&quot; &quot;a&quot;) &quot;a&quot;) : 2
+  (NBOCC (&quot;b&quot; &quot;c&quot; &quot;a&quot; &quot;a&quot;) &quot;z&quot;) : 0
+  (NBOCC (&quot;z&quot; &quot;c&quot; &quot;a&quot; &quot;z&quot;) &quot;z&quot;) : 2
+  (NBOCC (&quot;z&quot; &quot;c&quot; &quot;y&quot; &quot;a&quot; &quot;z&quot;) &quot;y&quot;) : 1</code></pre>
+
+<p><b>resultat en lancement pas a pas</b></p>
 
 <pre><code>  (NBOCC (&quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;a&quot;) &quot;a&quot;) 
   2
@@ -86,7 +106,22 @@
 
 <p><b>ensuite je sais que cela a ete dit mais :</b></p>
 
-<pre><code>  je n&#39;ai pas compris les parentheses apres la definition de fonction...</code></pre>
+<pre><code>  je n&#39;ai pas compris les parentheses apres la definition de fonction...
+  j&#39;ai peut etre une reponse, avoir des quote a chaque declaration serait peut être complique non?</code></pre>
+
+<h1 id="POD-ERRORS">POD ERRORS</h1>
+
+<p>Hey! <b>The above document had some coding errors, which are explained below:</b></p>
+
+<dl>
+
+<dt id="Around-line-89">Around line 89:</dt>
+<dd>
+
+<p>Non-ASCII character seen before =encoding in &#39;être&#39;. Assuming UTF-8</p>
+
+</dd>
+</dl>
 
 
 </body>

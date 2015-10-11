@@ -22,15 +22,37 @@ chercher le nombre d'occurence x dans la liste l
 
 =head2 fonction resultat
 
-permet d'afficher l'appel de fonction ainsi que son resultat
+permet d'afficher l'appel de fonction ainsi que son resultat. 
+Il permet a present d'avoir un affichage complet en mode script.
 
 =head3 code resultat
+
+B<version avec sorties formate pour le mode script>
+
+  (defun resultat(l x)
+    (format t "~s : ~s~%" (list 'nbOcc l x)
+    (nbOcc l x)))
+
+B<version avec sorties non formate>
 
   (defun resultat(l x)
     (print (list 'nbOcc l x))
     (nbOcc l x))
 
 =head3 resultat
+
+B<resultat formate pour le mode script>
+
+  (NBOCC ("a" "b" "c" "a") "a") : 2
+  (NBOCC ("a" "a" "a" "a") "a") : 4
+  (NBOCC ("b" "c" "a" "a") "a") : 2
+  (NBOCC ("b" "c" "a" "a") "z") : 0
+  (NBOCC ("z" "c" "a" "z") "z") : 2
+  (NBOCC ("z" "c" "y" "a" "z") "y") : 1
+
+
+B<resultat en lancement pas a pas>
+
 
   (NBOCC ("a" "b" "c" "a") "a") 
   2
@@ -64,6 +86,7 @@ B<sur equal :>
 B<ensuite je sais que cela a ete dit mais :>
 
   je n'ai pas compris les parentheses apres la definition de fonction...
+  j'ai peut etre une reponse, avoir des quote a chaque declaration serait peut être complique non?
 
 =cut
 
@@ -76,8 +99,8 @@ B<ensuite je sais que cela a ete dit mais :>
        1 0) (nbOcc(cdr l) x))))
 
 (defun resultat(l x)
-  (print (list 'nbOcc l x))
-  (nbOcc l x))
+  (format t "~s : ~s~%" (list 'nbOcc l x)
+  (nbOcc l x)))
 
 (resultat '("a" "b" "c" "a") "a")
 (resultat '("a" "a" "a" "a") "a")
@@ -87,7 +110,7 @@ B<ensuite je sais que cela a ete dit mais :>
 (resultat '("z" "c" "y" "a" "z") "y")
 
 ;pour mettre en avant ma question sur equal :
-(eq "a" "a") ;nil
+(eq "a" "a") ;ni~%l
 (eql "a" "a") ;nil 
 (equal "a" "a") ;t pourquoi?!?! J'ai lu que cela appel string= lorsque l'on compare deux strings...Seulement il s'agit de deux chars je me trompe?
 ;(char= "a" "a") ne compile même pas...
